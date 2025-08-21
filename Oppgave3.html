@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="average"></p>
+    
+    <script>
+        
+    const nameFar = "far"
+    let ageFar = 37
+
+    const nameMor = "mor"
+    let ageMor = 32
+
+    const nameDatter = "datter"
+    let ageDatter = 7
+
+    const nameSønn = "sønn"
+    let ageSønn = 2
+
+        const Total = ageFar + ageDatter + ageMor + ageSønn
+        const snitt = Total / 4
+
+        const melding = "gjennomsnittsalderen i familien er " + snitt 
+
+        document.getElementById("average").innerHTML = melding
+
+    </script>
+</body>
+</html>
