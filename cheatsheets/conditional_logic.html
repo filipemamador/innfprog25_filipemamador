@@ -15,7 +15,7 @@
     <p id="retire"></p>
 
     <script>
-
+        
         const age = 25
         const tg_passed = true
 
@@ -44,19 +44,19 @@
                 utskrift.innerHTML = "nei"
             }
         }
-        let retiremsg = document.getElementById("retire")
+        let retiremsg = document.getElementById(`retire`)
 
         //Sjekk av mulig pensjonsalder
 
         if(age >= 62 && age < 67) {
             retiremsg.innerHTML = "Du kan gå av med AFP"
         } else if(age >= 67){
-            retiremsg.innerHTML = "Du kan av med full pensjon"
+            retiremsg.innerHTML = `Du kan av med full pensjon`
 
         } else {
              
             
-            retiremsg.innerHTML = "Du kan gå av med AFP om " + 62 - age + "år, og full pensjon om " + 67 - age + "år"
+            retiremsg.innerHTML = `Du kan gå av med AFP om ${62 - age} år, og full pensjon om ${67 - age} år`
         }
         
 
