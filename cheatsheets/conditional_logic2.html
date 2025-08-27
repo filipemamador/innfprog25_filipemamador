@@ -6,8 +6,15 @@
     <title>if_else</title>
 </head>
 <body>
-    
+    <h2>Er du kvalifisert til førerkort?</h2>
+    <p id="carmsg"></p>
+
+    <h2>Kan du åpne dørren?</h2>
+    <p id="doormsg"></p>
+
+    <h2></h2>
     <script>
+        //førerkort test
 
         const age = 25
         const tg_passed = true
@@ -16,7 +23,24 @@
         document.getElementById("carmsg").innerHTML = "ja"
         }else {
             document.getElementById("carmsg").innerHTML = "nei"
+
         }
+
+        //Er døren låst og har du nøkkelen?
+
+        const door_locked = true
+        const backpack = "key"
+
+        if(door_locked === true){
+        document.getElementById("doormsg").innerHTML = "Nei"
+        }else {
+            document.getElementById("doormsg").innerHTML = "ja"
+        } if(backpack === "key"){
+            document.getElementById("doormsg").innerHTML = "ja"
+        } else {
+            document.getElementById("doormsg").innerHTML = "nei"
+        }
+        
 
 
 
