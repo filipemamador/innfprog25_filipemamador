@@ -8,9 +8,28 @@
 <body>
     
     <script>
-        const handleliste = ["Middag", "Brød", "Melk", "Egg", "Bacon"]
+        const handleliste = [{
+            id: "1",
+            name: "Brød",
+            antal: 5
+        
+        },
+        {
+            id: "2",
+            name: "Egg",
+            antal: 12
+        },
+        {
+            id: "3",
+            name: "Bacon",
+            antal: 8
+        }]
 
-        console.log("Handleliste", handleliste)
+        handleliste.map((handle) => {
+            console.log(handle.antal)
+        
+        })
+        
 
         const produkter = [
             {
@@ -31,7 +50,14 @@
             }
         ]
 
-        console.log("produktliste", produkter)
+            produkter.map((prod) => {
+                console.log(prod.name)
+
+            
+            })
+
+
+
 
 
     </script>
