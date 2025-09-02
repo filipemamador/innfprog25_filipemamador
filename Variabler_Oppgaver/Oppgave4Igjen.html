@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Oppgave 4 igjen</title>
+
+    </head>
+    <body>
+        
+        <p id="mailLink"></p>
+
+        <script>
+            const name = "Filipe"
+            const email = "filipem@hiof.no"
+            const mailLink = `<a href=mailto:${email}"> Send mail til ${email}</a>`
+
+                document.getElementById("mailLink").innerHTML = mailLink
+                console.log(mailLink)
+        </script>
+
+    </body>
