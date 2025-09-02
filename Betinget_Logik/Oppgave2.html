@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Oppgave 2 betinget logik</title>
+    <head>
+
+        <body>
+            <p id="utskrift"><span>Er du myndig?</span></p>
+
+            <script>
+                const age = 63
+                
+                if(age <= 18){
+                    utskrift = "Du er ikke myndig"
+                } else if(age >=18 && age <=62){
+                
+                    utskrift = "Du er myndig og klar til studiet eller arbeidslivet"
+                }else {
+                    utskrift = "Du er pensjonsklar"
+                }
+                
+                 console.log(utskrift)
+                 document.getElementById("utskrift").innerHTML = utskrift
+            </script>
+
+
+        </body>
+
+
+
+    </head>
