@@ -17,61 +17,79 @@
                 office: "D1-016",
                 email: "toremake@hiof.no",
                 birthyear: 1983,
+                courses: ["innføring i programmering", "Kommunikasjonsdesign",
+                 " Ui Designprosjekt", "Utvikling av interaktive nettsteder"]
             },
             {
                 name: "Daniela Blauhut",
                 office: "D1-015",
                 email: "danielb@hiof.no",
                 birthyear: 1977,
+                courses: ["Designmetoder", "Ui Designprosjekt"]
             },
             {
                 name: "Ann-Charlott Karlsen",
                 office: "D1-062",
                 email: "ackarlse@hiof.no",
                 birthyear: 1977,
+                courses: ["Webutvikling", "Utvikling av interaktive nettsteder"]
             },
             {
                 name: "Ole Edvard Ørebæk",
                 office: "D1-061A",
                 email: "oledvo@hiof.no",
                 birthyear: 1992,
+                courses: ["Innføring i datasikkerhet"]
+
             },
             {
                 name: "Thor Andreas Holdberg Murtnes-Hatlestad",
                 office: "Hjemmekontor",
                 email: "thoraho@hiof.no",
                 birthyear: 1990,
+                courses: ["Innføring i programmering"]
             }
         ]
 
+        console.log(lecturers)
+
         let profiles = document.getElementById("profiles")
 
-        lecturers.map(lecturer => {
-
-            profiles.innerHTML += `<li>
-                
-                <h3>${lecturer.name}</h3>
-                <span>Alder: ${2025 - lecturer.birthyear}</span>
-                <p>Kontor: ${lecturer.office}</p>
-                <a href="mailto:${lecturer.mail}">Skriv epost til ${lecturer.name}</a>
-                    
-                    </li>`
-            console.log(lecturer)
-        })
-
-
-        lecturers.filter(lec => lec.birthyear >= 1990).map(lecturer => {
+         lecturers.map(lecturer => {
 
              profiles.innerHTML += `<li>
                 
-                <h3>${lecturer.name}</h3>
-                <span>Alder: ${2025 - lecturer.birthyear}</span>
-                <p>Kontor: ${lecturer.office}</p>
-                <a href="mailto:${lecturer.mail}">Skriv epost til ${lecturer.name}</a>
+                 <h3>${lecturer.name}</h3>
+                 <span>Alder: ${2025 - lecturer.birthyear}</span>
+                 <p>Kontor: ${lecturer.office}</p>
+                 <a href="mailto:${lecturer.mail}">Skriv epost til ${lecturer.name}</a>
+                 <ul>
+                ${lecturer.courses.map(course => {
+                    return `<li>${course}</li>`
+                }).join("")}    
+                </ul>
                     
-                    </li>`
-        })
+                     </li>`
+             console.log(lecturer)
+         })
+
+
+        // lecturers.filter(lec => lec.birthyear >= 1990).map(lecturer => {
+
+        //      profiles.innerHTML += `<li>
+                
+        //         <h3>${lecturer.name}</h3>
+        //         <span>Alder: ${2025 - lecturer.birthyear}</span>
+        //         <p>Kontor: ${lecturer.office}</p>
+        //         <a href="mailto:${lecturer.mail}">Skriv epost til ${lecturer.name}</a>
+                    
+        //             </li>`
+        // })
         
+
+
+
+
 
     </Script>
     
