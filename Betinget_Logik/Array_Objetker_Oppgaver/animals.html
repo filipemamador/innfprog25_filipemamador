@@ -7,6 +7,7 @@
 </head>
 <body>
     
+    <p id="setning"></p>
     <script>
 
         const dyr = ["Katt", "Hund", "Skilepadde", "Hest",
@@ -19,7 +20,7 @@
 
         const tekst = `${dyr[dyrIndex1]} er et dyr. Det heter ${animals[dyrIndex1]} på engelsk. ${dyr[dyrIndex2]} er også et dyr, som heter ${animals[dyrIndex2]} på engelsk`
         console.log(tekst)
-
+        document.getElementById("setning").innerHTML = tekst
     </script>
 
 </body>
