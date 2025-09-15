@@ -77,15 +77,12 @@
         //PREPARE GAME CONFIG AND VARIABLES
         //TODO: config
         const gameConfig = {
-            playerName : "Filipe",
+            playerName : "",
             energy : 5,
             points : 10,
             duration : 138
         }
-       document.getElementById("playerName").innerHTML = gameConfig.playerName
-       document.getElementById("energy").innerHTML = gameConfig.energy
-       document.getElementById("points").innerHTML = gameConfig.points
-       document.getElementById("duration").innerHTML = gameConfig.duration
+       
         //TODO: notebook
         const notebook = {
             variables: 3,
@@ -93,20 +90,54 @@
             loops: 4,
             functions:7 
         }
-        document.getElementById("variables").innerHTML = notebook.variables
-        document.getElementById("arrays").innerHTML = notebook.arrays
-        document.getElementById("loops").innerHTML = notebook.loops
-        document.getElementById("functions").innerHTML = notebook.functions
        
+       //if(gameConfig.playerName === ""){
+        //document.getElementById("playerName").innerHTML="Waiting for player..."
+       //}else{
+        //document.getElementById("playerName").innerHTML= gameConfig.playerName
+       //}
 
         //TODO: print playerinfo to HTML
+        //document.getElementById("playerName").innerHTML = gameConfig.playerName
+       //document.getElementById("energy").innerHTML = gameConfig.energy
+       //document.getElementById("points").innerHTML = gameConfig.points
+       //document.getElementById("duration").innerHTML = gameConfig.duration
      
 
         
         //TODO: print notebook info to HTML
+        //document.getElementById("variables").innerHTML = notebook.variables
+        //document.getElementById("arrays").innerHTML = notebook.arrays
+        //document.getElementById("loops").innerHTML = notebook.loops
+        //document.getElementById("functions").innerHTML = notebook.functions
 
         //(BONUS) TODO: function for all prints
-        
+        function updateStaticUI(){
+            if(gameConfig.playerName === ""){
+        document.getElementById("playerName").innerHTML="Waiting for player..."
+        for(key in gameConfig){
+            key=== playerName ? playName : gameConfig[key]=0
+        }
+        for(key in notebook){
+            notebook[key] = 0
+        }
+       }else{
+        document.getElementById("playerName").innerHTML= gameConfig.playerName
+       }
+
+        //TODO: print playerinfo to HTML
+        //document.getElementById("playerName").innerHTML = gameConfig.playerName
+       document.getElementById("energy").innerHTML = gameConfig.energy
+       document.getElementById("points").innerHTML = gameConfig.points
+       document.getElementById("duration").innerHTML = gameConfig.duration
+
+        //TODO: print notebook info to HTML
+        document.getElementById("variables").innerHTML = notebook.variables
+        document.getElementById("arrays").innerHTML = notebook.arrays
+        document.getElementById("loops").innerHTML = notebook.loops
+        document.getElementById("functions").innerHTML = notebook.functions
+        }
+        updateStaticUI()
     </script>
 </body>
 </html>
