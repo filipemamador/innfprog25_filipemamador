@@ -26,7 +26,7 @@
         </section>
         <img src="icons/c3_logo.svg" alt="Code Concept Collector" />
         <nav>
-            <button id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
+            <button onclick="toggleVisibility(elementid)" id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
             <button id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
         </nav>
     </header>
@@ -138,6 +138,33 @@
         document.getElementById("functions").innerHTML = notebook.functions
         }
         updateStaticUI()
+
+        //Oppgave 1 
+        //let elementid = "notebook-page"
+        function toggleVisibility(elementid){
+            const elem = document.getElementById(elementid)
+            if(elem.classList.contains("hidden")){
+                elem.style.display = "block"
+                elem.classList.remove("hidden")
+            }else {
+                elem.style.display = "none"
+                elem.classList.add("hidden")
+            }
+        }
+
+        //Oppgave 2
+        document.addEventListener("keydown", function(event) {
+            if(event.key === "n"){
+                toggleVisibility("notebook-page")
+            }
+            if(event.key === "i"){
+                toggleVisibility("info")
+            }
+            
+        }
+        )
+
+
     </script>
 </body>
 </html>
