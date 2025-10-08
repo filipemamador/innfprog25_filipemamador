@@ -26,8 +26,8 @@
         </section>
         <img src="icons/c3_logo.svg" alt="Code Concept Collector" />
         <nav>
-            <button onclick="toggleVisibility(elementid)" id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
-            <button id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
+            <button  id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
+            <button  id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
         </nav>
     </header>
     <main>
@@ -77,7 +77,7 @@
         //PREPARE GAME CONFIG AND VARIABLES
         //TODO: config
         const gameConfig = {
-            playerName : "",
+            playerName : "Filipe",
             energy : 5,
             points : 10,
             duration : 138
@@ -140,7 +140,7 @@
         updateStaticUI()
 
         //Oppgave 1 
-        let elementid = "notebook-page"
+      
         function toggleVisibility(elementid){
             const elem = document.getElementById(elementid)
             if(elem.classList.contains("hidden")){
@@ -164,6 +164,41 @@
         }
         )
 
+
+        //oppgave 3
+        const infoTogglerBtn = document.getElementById("infoToggler")
+        infoTogglerBtn.addEventListener("click", () => {
+            toggleVisibility("info")
+        })
+        const notebookTogglerBtn = document.getElementById("notebookToggler")
+        notebookTogglerBtn.addEventListener("click", () => {
+            toggleVisibility("notebook-page")
+        })
+
+        //Oppgave 4
+        function updateSingleStaticUI(elementid, value){
+            document.getElementById(elementid).innerHTML = value
+        }
+        updateSingleStaticUI("points", "10")
+        updateSingleStaticUI("energy", "60")
+
+        //Oppgave 5
+
+        function updateConfigValue(ConfigType, value){
+
+            ConfigType === "variables"  ? notebook.variables += value : null
+            ConfigType === "arrays" ? notebook.arrays += value : null
+            ConfigType === "loops" ? notebook.loops += value : null
+            ConfigType === "functions" ? notebook.functions += value : null
+
+            ConfigType === "energy" ? gameConfig.energy += value : null
+            ConfigType === "points" ? gameConfig.points += value : null
+            ConfigType === "duration" ? gameConfig.duration += value : null
+            updateStaticUI()
+        }
+        updateConfigValue("variables", 10)
+        updateConfigValue("arrays", 100)
+        
 
     </script>
 </body>
