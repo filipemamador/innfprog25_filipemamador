@@ -28,10 +28,8 @@
         //Din kode for å løse problem 1 her
 
 
-            function randomMinMax(min, max){
-                return Math.floor(Math.random() * (max - min + 1) + min)
-            }
-            const colorCode = randomHex()
+
+            const colorCode = randomHex()   
 
             function randomHex(){
                 
@@ -39,7 +37,7 @@
                 random_color_code += hexadecimal_characters[Math.floor(Math.random()*16)];
             }}
             console.log(random_color_code)
-            document.getElementById("random_color").textContent = random_color_code
+            document.getElementById("random_color").innerHTML = random_color_code
 
 
         //PROBLEM 2 
@@ -49,9 +47,9 @@
             function verifyWord(word){
                 
                 if(programming_words.includes(word)){
-                document.getElementById(word + "_sjekk").innerText = "ja"
+                document.getElementById(word + "_sjekk").innerHTML = "ja"
                 }else{
-                    document.getElementById(word + "_sjekk").innerText = "nei"
+                    document.getElementById(word + "_sjekk").innerHTML = "nei"
                 }   
             }
         verifyWord("betingelse")

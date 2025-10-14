@@ -16,16 +16,44 @@
     <p>Finnes ordet "problemløsning" i Programmeringsord-arrayen? <span id="problemlosning_sjekk"></span></p>
     <h2>Problem 3</h2>
     <p>Gjennomsnittet av tallene i tall_array_en er <span id="avg_array_one"></span></p>
-    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_one"></span></p>
+    <!--Har endret iden til avg_array_to siden vi kan ikke ha 2 id'er med samme navn-->
+    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_two"></span></p>
 
-    <script>
+    <script>    
         //PROBLEM 1
-        
+        //PROBLEM 1
+        function generateRandomHexColor() {
+            const hexChars = "0123456789ABCDEF"; // gyldige tegn
+            let color = "#"; // starter med hashtag
+            for (let i = 0; i < 6; i++) {
+                color += hexChars[Math.floor(Math.random() * 16)];
+            }
+            return color;
+}
+
+    // generer tilfeldig farge og skriv den ut i span-elementet
+    const randomColor = generateRandomHexColor();
+    document.getElementById("random_color").textContent = randomColor;
+
         //AI-kode for å løse problem 1 her.
 
         //PROBLEM 2
         const programming_words = ["variabel","funksjon","array","objekt","loop","betingelse","klasse","rekursjon","algoritme","kompilator"]
 
+    
+        function sjekkOrd(ord) {
+    // returnerer "Ja" hvis ordet finnes i arrayen, ellers "Nei"
+        if (programming_words.includes(ord)) {
+        return "Ja";
+        } else {
+        return "Nei";
+        }
+    }
+
+    // Kjør funksjonen på de tre ordene og vis resultatet i HTML
+    document.getElementById("betingelse_sjekk").textContent = sjekkOrd("betingelse");
+    document.getElementById("algoritme_sjekk").textContent = sjekkOrd("algoritme");
+    document.getElementById("problemlosning_sjekk").textContent = sjekkOrd("problemløsning");
         //AI-kode for å løse problem 2 her.
 
         //PROBLEM 3
@@ -33,6 +61,22 @@
         const tall_array_to = [23, 76, 88, 13, 56, 90, 42]
 
         //AI-kode for å løse problem 3 her.
+        //PROBLEM 3
+    function finnGjennomsnitt(tallArray) {
+    // Regner ut summen av alle tall i arrayen
+    let sum = 0;
+    for (let i = 0; i < tallArray.length; i++) {
+        sum += tallArray[i];
+    }
+
+    // Regner ut gjennomsnittet
+    let gjennomsnitt = sum / tallArray.length;
+    return gjennomsnitt;
+    }
+
+    // Kjør funksjonen på begge arrayene og skriv ut resultatet i HTML
+    document.getElementById("avg_array_one").textContent = finnGjennomsnitt(tall_array_en);
+    document.getElementById("avg_array_two").textContent = finnGjennomsnitt(tall_array_to);
     </script>
 </body>
 </html>
